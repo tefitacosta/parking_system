@@ -1,11 +1,11 @@
 <!-- New Vehicle-->
 <h2>Register new vehicle</h2>
 
-<%= form_for @vehicle, url: {action: 'create'} do |form| %>
-  <%= devise_error_messages! %>
+<%= form_for @vehicle, url: {action: 'create'} do |f| %>
+
 
   <div class="field">
-    <%= f.label :model %><br/>
+    <%= f.label :model %> <br/>
     <%= f.text_field :model, autofocus: true %>
   </div>
 
@@ -18,3 +18,5 @@
     <%= f.label :year %><br/>
     <%= f.date_field :year, autofocus: true %>
   </div>
+
+<% end %>
