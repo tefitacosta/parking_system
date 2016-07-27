@@ -1,0 +1,22 @@
+<!-- New Location-->
+<h2>Register new location</h2>
+
+<%= form_for @location, url: {action: 'create'} do |f| %>
+
+
+  <div class="field">
+    <%= f.label :name %> <br/>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br/>
+    <%= f.text_field :location, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :max_slots %><br/>
+    <%= f.integer_field :max_slots, autofocus: true %>
+  </div>
+
+<% end %>
