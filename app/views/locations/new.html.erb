@@ -10,13 +10,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :location %><br/>
-    <%= f.text_field :location, autofocus: true %>
+    <%= f.label :address %><br/>
+    <%= f.text_field :address, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br/>
+    <%= f.text_field :description, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :max_slots %><br/>
-    <%= f.integer_field :max_slots, autofocus: true %>
+    <%= f.number_field :max_slots, autofocus: true %>
   </div>
 
   <div class="actions">

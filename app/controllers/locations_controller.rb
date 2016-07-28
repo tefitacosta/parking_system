@@ -1,4 +1,4 @@
-class LocationsController <ApplicatioController
+class LocationsController <ApplicationController
   def index
     @locations = Location.all
     flash[:error] = 'No locations registered.' if @locations.empty?
@@ -14,7 +14,7 @@ class LocationsController <ApplicatioController
       flash[:succes] = 'Location registered succesfully.'
       redirect_to  locations_path
     else
-      flash[:error] = @location.errors.full.messages.join(',') #. todo modelo de active records tiene habilitado el atributo errors
+      flash[:error] = @location.errors.full_messages.join(',') #. todo modelo de active records tiene habilitado el atributo errors
       render 'new'
     end
 
