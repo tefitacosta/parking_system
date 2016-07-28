@@ -1,5 +1,11 @@
 class VehiclesController < ApplicationController
 
+  def index
+    @user = current_user
+    @vehicles = @user.vehicles
+    flash[:error] = 'No vehicles registered.' if @vehicles.empty?
+  end
+
   def new
     @user = current_user
     @vehicle = Vehicle.new

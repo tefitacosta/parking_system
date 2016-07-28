@@ -1,1 +1,29 @@
+<!-- Index Location-->
+
 <h1> Vehicles </h1>
+
+<div class="container">
+      <h2> User vehicles</h2>
+      <p>These are the vehicles registered</p>
+  <div class="row">
+    <div class="col-sm-4">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Vin</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @vehicles.each do |vehicle| %>
+          <tr>
+            <td><% vehicle.model %></td>
+            <td><% vehicle.vin %></td>
+            <td><% vehicle.year %></td>
+          </tr>
+            </tbody>
+      </table>
+    </div>
+  </div>
+</div>
