@@ -4,46 +4,30 @@
   <h1> Locations </h1>
       <p>Here you can find all existing locations</p>
   <div class="row">
-    <div class="col-sm-8">
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Location name</th>
             <th>Description</th>
             <th>Available slots</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @locations.each do |location| %>
-          <tr>
-            <td><% location.name %></td>
-            <td><% location.description %></td>
-            <td><% location.max_slots %></td>
-          </tr>
-          <%end%>
-            </tbody>
-      </table>
-    </div>
-    <div class="col-sm-4">
-      <table class="table">
-        <thead>
-          <tr>
             <th>Map</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <% @locations.each do |location| %>
-              <td><%location.address%></td>
-              <% unless location.latitude.nil? && location.longitude.nil? %>
-                  <td>
-                    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=150x150&sensor=false&zoom=14&markers=#{location.latitude}%2C#{location.longitude}" %>
-                  </td>
-              <%end%>
-            <%end%>
-          </tr>
-        </tbody>
-      </table>
+          <% @locations.each do |location| %>
+            <tr>
+              <td><%= location.name %></td>
+              <td><%= location.description %></td>
+              <td><%= location.max_slots %></td>
+              <td><%=location.address%></td>
+                <% unless location.latitude.nil? && location.longitude.nil? %>
+                    <td>
+                      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=150x150&sensor=false&zoom=14&markers=#{location.latitude}%2C#{location.longitude}" %>
+                    </td>
+                    <%end%>
+            </tr>
+          <%end%>
+            </tbody>
     </div>
   </div>
 </div>
